@@ -4,27 +4,24 @@
  */
 package itv;
 
-import util.GestorIO;
-
-/**
+/**,.
  *
  * @author irene
  */
-public class Coche extends TransportePersonas{
-    GestorIO teclado = new GestorIO();
-    protected Coche(int cmCubicos, double costePlazasAdicionales, int incrementoPorPotencia, int plazas, int cilindros, int potencia) {
+public class Microbus extends TransportePersonas{
+    
+    public Microbus(int cmCubicos, double costePlazasAdicionales, int incrementoPorPotencia, int plazas, int cilindros, int potencia) {
         super(cmCubicos, costePlazasAdicionales, incrementoPorPotencia, plazas, cilindros, potencia);
     }
     
-    public Coche registrarCoche(){
+     public Microbus registrarCoche(){
         int cmCubicos,plazas, cilindros, potencia;
-        int incrementoPorPotencia = 10;
-        double costePlazasAdicionales = 15;
+        int incrementoPorPotencia = getIncrementoPorPotencia();
         cmCubicos = super.pedirCmCubicos();
         plazas = validarPlazas();
         cilindros = super.validarCilindros();
         potencia = super.pedirPotencia();
-        return new Coche(cmCubicos, 1.5, incrementoPorPotencia, plazas , cilindros, potencia);
+        return new Microbus(cmCubicos, 2, incrementoPorPotencia, plazas , cilindros, potencia);
     }
     
     private int validarPlazas(){
@@ -32,11 +29,11 @@ public class Coche extends TransportePersonas{
         boolean error;
         do{
             error = false;
-            teclado.out("Introduce las plazas del coche: ");
+            teclado.out("Introduce las plazas del microbus: ");
             plazas = teclado.inInt();
-            if(plazas < 2 || plazas > 7){
+            if(plazas < 2 || plazas > 20){
                 error = true;
-                teclado.out("Solo puede tener entre 2 y 7 plazas.");
+                teclado.out("Solo puede tener entre 2 y 20 plazas.");
             }            
         }while(error);
         
