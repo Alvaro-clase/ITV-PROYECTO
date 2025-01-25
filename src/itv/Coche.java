@@ -5,6 +5,7 @@
 package itv;
 
 import util.GestorIO;
+import util.Interval;
 
 /**
  *
@@ -12,8 +13,9 @@ import util.GestorIO;
  */
 public class Coche extends TransportePersonas{
     GestorIO teclado = new GestorIO();
-    protected Coche(int cmCubicos, double costePlazasAdicionales, int incrementoPorPotencia, int plazas, int cilindros, int potencia) {
-        super(cmCubicos, costePlazasAdicionales, incrementoPorPotencia, plazas, cilindros, potencia);
+    
+    protected Coche(String matricula, int cmCubicos, double costePlazasAdicionales, int incrementoPorPotencia, int plazas, int cilindros, int potencia) {
+        super(matricula, cmCubicos, costePlazasAdicionales, incrementoPorPotencia, plazas, cilindros, potencia);
     }
     
     public Coche registrarCoche(){
@@ -27,14 +29,16 @@ public class Coche extends TransportePersonas{
         return new Coche(cmCubicos, 1.5, incrementoPorPotencia, plazas , cilindros, potencia);
     }
     
-    private int validarPlazas(){
+    protected int validarPlazas(){
         int plazas;
         boolean error;
+        limitesPlazas = new Interval(2,7);
+
         do{
             error = false;
             teclado.out("Introduce las plazas del coche: ");
             plazas = teclado.inInt();
-            if(plazas < 2 || plazas > 7){
+            if(limitesPlazas.inclou(plazas)){
                 error = true;
                 teclado.out("Solo puede tener entre 2 y 7 plazas.");
             }            
