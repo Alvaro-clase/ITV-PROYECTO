@@ -54,6 +54,10 @@ public abstract class Vehiculo {
     public int getREVISION_CILINDROS() {
         return REVISION_CILINDROS;
     }
+    
+    public String getMatricula(){
+        return MATRICULA;
+    }
 
     public void mostrarTodo(){
         

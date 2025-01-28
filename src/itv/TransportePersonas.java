@@ -88,6 +88,10 @@ public abstract class TransportePersonas extends Vehiculo {
         return this.getPlazas() > this.PLAZAS_GRATUITAS;
     }
 
+    @Override
+    public void mostrarTodo(){
+        
+    }
     protected abstract int validarPlazas();
 
     @Override
@@ -99,5 +103,6 @@ public abstract class TransportePersonas extends Vehiculo {
     public double calcularPrecioBase() {
         return this.getCilindros() * this.getREVISION_CILINDROS();
     }
+    
 
 }
