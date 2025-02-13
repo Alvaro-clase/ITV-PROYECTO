@@ -50,13 +50,11 @@ public class RegistroNuevoVehiculo extends OpcionTaller {
             cliente = taller.getClientePorDNI(dniCliente);
         } catch (NotExistsException ex) {
             teclado.out("El cliente con el DNI " + dniCliente +" no ha sido dado de alta");
-        }
-        
-        
-        if(cliente == null){
-            teclado.out("\nEl cliente de este coche no está aun registrado.");
             return;
         }
+        
+        
+        
         teclado.out("Selecciona el tipo de vehículo: \n");
         teclado.out("1. Coche\n");
         teclado.out("2. Microbús\n");

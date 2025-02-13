@@ -68,6 +68,7 @@ public class Taller {
      *
      * @param dni
      * @return cliente (NULL SI NO ESTÁ)
+     * @throws excepciones.NotExistsException
      */
     public Cliente getClientePorDNI(String dni) throws NotExistsException {
         if (estaEsteDNI(dni)) {
@@ -85,7 +86,7 @@ public class Taller {
     /**
      * Verifica si está el dni
      *
-     * @param DNI
+     * @param dni
      * @return boolean
      */
     public boolean estaEsteDNI(String dni) {
