@@ -16,7 +16,7 @@ public class CalculoPagamentosRevisados extends Opcion {
 
     public CalculoPagamentosRevisados() {
         super("Calcular y pagar vehículo revisado");
-        this.vehiculosCobrar = new Cola();
+        this.vehiculosCobrar = new Cola(4);
     }
 
     /**

@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/alexs/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Box.java</file>
-            <file>file:/C:/Users/alexs/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Taller.java</file>
-            <file>file:/C:/Users/alexs/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Vehiculo.java</file>
-=======
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/opcion/CalculoPagamentosRevisados.java</file>
->>>>>>> 88938930cb526da3b6253fc746eaeae5f74dd010
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/RegistroNuevoVehiculo.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/excepciones/FullQueueException.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Taller.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/cliente/Cliente.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Cola.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Box.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/FaseRevision.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/vehiculo/TransportePersonas.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/CalculoPagamentosRevisados.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/CalculoIngresos.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/excepciones/NotExistsException.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/vehiculo/Vehiculo.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/AltaSocio.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/vehiculo/Coche.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/PasarDeFase.java</file>
         </group>
     </open-files>
 </project-private>

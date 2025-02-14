@@ -1,6 +1,7 @@
 package itv;
 
 import cliente.Cliente;
+import excepciones.FullQueueException;
 import excepciones.NotExistsException;
 import factura.Factura;
 import java.util.Arrays;
@@ -33,8 +34,8 @@ public class Taller {
         for (int i = 0; i < boxes.length; i++) {
             boxes[i] = new Box();
         }
-        colaPrincipal = new Cola();
-        colaDePago = new Cola();
+        colaPrincipal = new Cola(20);
+        colaDePago = new Cola(4);
         matriculasEnTaller = new String[0];
         ingresosTotales = 0;
         clientes = new Cliente[0];
@@ -182,7 +183,7 @@ public class Taller {
      *
      * @param numeroBox el número del box.
      */
-    public void avanzarVehiculos(int numeroBox) {
+    public void avanzarVehiculos(int numeroBox)throws NotExistsException {
         boxes[numeroBox - 1].avanzarVehiculos();
     }
 
@@ -213,8 +214,9 @@ public class Taller {
      * Inserta un vehículo en la cola principal.
      *
      * @param vehiculo el vehículo a insertar.
+     * @throws excepciones.FullQueueException
      */
-    public void insertarVehiculo(Vehiculo vehiculo) {
+    public void insertarVehiculo(Vehiculo vehiculo) throws FullQueueException {
         this.colaPrincipal.insertarVehiculo(vehiculo);
     }
 
@@ -254,8 +256,9 @@ public class Taller {
      *
      * @param numeroBox el número del box.
      * @return el vehículo extraído.
+     * @throws excepciones.NotExistsException
      */
-    public Vehiculo extraerVehiculoBox(int numeroBox) {
+    public Vehiculo extraerVehiculoBox(int numeroBox) throws NotExistsException {
         return boxes[numeroBox - 1].copiarUltimoVehiculo();
     }
 
@@ -273,8 +276,9 @@ public class Taller {
      * Mueve un vehículo a la cola de pago.
      *
      * @param vehiculo el vehículo a mover.
+     * @throws excepciones.FullQueueException
      */
-    public void meterColaPago(Vehiculo vehiculo) {
+    public void meterColaPago(Vehiculo vehiculo) throws FullQueueException {
         this.colaDePago.insertarVehiculo(vehiculo);
     }
 }

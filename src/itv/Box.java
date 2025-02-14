@@ -51,15 +51,16 @@ public class Box {
      * 
      * @return el vehículo en la última fase del box.
      */
-    public Vehiculo copiarUltimoVehiculo(){
+    public Vehiculo copiarUltimoVehiculo() throws NotExistsException{
+        if(this.fases[3].estaLibre()) throw new NotExistsException("No hay vehículos en la última fase");
         return this.fases[3].getVehiculo();
     }
 
     /**
-     * Avanza los vehículos de las fases en un box.
-     * Si la última fase está ocupada, se elimina el vehículo antes de mover los demás.
+     * Avanza los vehículos de las fases en un box.Si la última fase está ocupada, se elimina el vehículo antes de mover los demás.
+     * @throws excepciones.NotExistsException
      */
-    public void avanzarVehiculos() {
+    public void avanzarVehiculos() throws NotExistsException {
         boolean hayVehiculos = false;
         for (FaseRevision fase : fases) {
             if (!fase.estaLibre()) {
@@ -67,14 +68,12 @@ public class Box {
                 break;
             }
         }
-        if (!hayVehiculos) {
-            teclado.out("No hay vehículos en este box para avanzar.\n");
-            return;
-        }
+        if (!hayVehiculos) throw new NotExistsException("No hay vehículos en este box para avanzar.");
+        
         if (!fases[fases.length - 1].estaLibre()) {
             Vehiculo ultimoVehiculoFase = fases[fases.length - 1].getVehiculo();
             teclado.out("El vehículo con matrícula " + ultimoVehiculoFase.getMatricula() + " ha superado las fases de revisión y ha abandonado el taller.\n");           
-            fases[fases.length - 1].eliminarVehiculo();
+            fases[fases.length - 1].eliminarVehiculo(); //Necesito ver si aquí es donde deberíamos añadir el vehiculo a la cola de pago y que se lance la excepción de cola llena desdde aquí
         }
         for (int i = fases.length - 1; i > 0; i--) {
             if (!fases[i - 1].estaLibre()) {

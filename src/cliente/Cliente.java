@@ -32,7 +32,7 @@ public class Cliente {
         if(this.getContVecesAqui() == 0){
             return 0.7; //Es un 30% de descuento
         }
-        return 0;
+        return 1;
     }
     
     public double descuentoSocio(){
@@ -40,14 +40,14 @@ public class Cliente {
             contSiendoSocio++;
             return 0.97;
         } //ARREGLAR ESTA PTA MRDA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        return 0;
+        return 1;
     }
     
     public double descuentoVip(){
         if(isVIP()){
             return 0;
         }
-        return 0;
+        return 1;
     }
     
     public String getDni() {

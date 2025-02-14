@@ -2,6 +2,7 @@ package opcion;
 
 
 import cliente.Cliente;
+import excepciones.FullQueueException;
 import excepciones.NotExistsException;
 import itv.Cola;
 import itv.Taller;
@@ -97,8 +98,13 @@ public class RegistroNuevoVehiculo extends OpcionTaller {
         
         
         taller.registrarVehiculo(vehiculo);
+        try{
         taller.insertarVehiculo(vehiculo);
         teclado.out("Vehiculo " + vehiculo.getMatricula() + " registrado\n");
+        }catch (FullQueueException e){
+            System.out.println(e);
+        }
+        
         
     }
     private String validarDNI(String dni){
