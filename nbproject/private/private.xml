@@ -3,11 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/itv/Box.java</file>
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/ComentariosEvaluación/ComentariosJoseRamon.java</file>
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/itv/FaseRevision.java</file>
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/itv/Taller.java</file>
-            <file>file:/home/ciclost/NetBeansProjects/ITV-PROYECTO/src/itv/Cola.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Taller.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/main/ITV.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/factura/HistoricoFactura.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/InformeClientesVIP.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/MostrarBoxes.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/cliente/Cliente.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/Box.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/FaseRevision.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/RegistrarCliente.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/MostrarBox.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/ReclamacionVehiculo.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/VehiculoMatriculaNueva.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/ClienteDNIAlto.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/vehiculo/Vehiculo.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/HistoricoFacturasVehiculo.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/itv/GenericQueue.java</file>
+            <file>file:/C:/Users/irene/Documents/NetBeansProjects/ITV-PROYECTO/src/opcion/PasarDeFase.java</file>
         </group>
     </open-files>
 </project-private>

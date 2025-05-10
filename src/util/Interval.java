@@ -193,4 +193,12 @@ public class Interval {
         return intervalos;
     }
 
+    public double getInferior() {
+        return inferior;
+    }
+
+    public double getSuperior() {
+        return superior;
+    }
+    
 }

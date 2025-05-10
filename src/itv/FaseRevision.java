@@ -1,64 +1,124 @@
 package itv;
 
+import util.GestorIO;
+import util.Interval;
+import vehiculo.Vehiculo;
+
 /**
- * @author Irene Payá, Álvaro Carrión, Alejando Soler
+ * @author irene, alvaro, alejandro
  */
 public class FaseRevision {
-
-    private final static String[] fases = {"Revisión inicial de elementos de seguridad", "Revisión del sistema eléctrico", "Revisión de emisión de humos", "Revisión de frenos y dirección"};
+    private GestorIO teclado = new GestorIO();
+    private Interval LIMITE_POSICION = new Interval(1,4);
+    private static final String[] NOMBRES_FASES = {
+        "Revisión inicial de elementos de seguridad",
+        "Revisión del sistema eléctrico",
+        "Revisión de emisión de humos",
+        "Revisión de frenos y dirección"
+    }; 
     private String nombreFase;
     private Vehiculo vehiculo;
 
+   
     public FaseRevision(int posicion) {
-        this.nombreFase = fases[posicion];
+        this.nombreFase = NOMBRES_FASES[posicion];
         this.vehiculo = null;
     }
+
     /**
-     * Incluye un vehículo a la fase que usa este método.
-     * @param vehiculo 
+     * Asigna un vehículo a la fase de revisión.
+     * 
+     * @param vehiculo el vehículo a asignar.
      */
-    public void asignarVehiculoFase(Vehiculo vehiculo) {
+    public void asignarVehiculoFase(Vehiculo vehiculo){
         this.vehiculo = vehiculo;
     }
+
     /**
-     * Muestra el nombre correspondiente de esta fase que usa el método.
-     * @return String (nombre de la fase)
+     * Obtiene el nombre de la fase de revisión.
+     * 
+     * @return el nombre de la fase.
      */
-    public String mostrarNombreFase() {
+    public String getNombreFase() {
         return this.nombreFase;
     }
+
     /**
-     * Elimina el vehículo de la fase que llama al método
+     * Elimina el vehículo asignado a la fase.
      */
-    public void eliminarVehiculo() {
+    public Vehiculo eliminarVehiculo() {
+        Vehiculo vehiculo = this.vehiculo;
         this.vehiculo = null;
+        return vehiculo;
     }
+
     /**
-     * Comprueba si la fase está libre de vehículos
-     * @return boolean
+     * Verifica si la fase de revisión está libre.
+     * 
+     * @return true si la fase está libre, false en caso contrario.
      */
     public boolean estaLibre() {
         return this.vehiculo == null;
     }
+
     /**
-     * Recoge la matrícula que tiene el vehículo que está en la fase que llama al método
-     * @return String (Matricula del coche)
+     * Verifica si la fase tiene un vehículo asignado.
+     * 
+     * @return true si hay un vehículo en la fase, false en caso contrario.
      */
-    public String getMatricula() {
-        return this.vehiculo.getMatricula();
+    public boolean tieneVehiculo() {
+        return this.vehiculo != null;
     }
+
     /**
-     * Recoge le vehículo que está en la fase que llama al método
-     * @return Vehículo (De la fase)
+     * Obtiene la matrícula del vehículo asignado a la fase.
+     * 
+     * @return la matrícula del vehículo o "Sin vehículo" si no hay vehículo asignado.
+     */
+    public String getMatriculaVehiculo() {
+        return (vehiculo != null) ? vehiculo.getMatricula() : "SIN VEHICULO\n";
+    }
+
+    /**
+     * Obtiene el vehículo asignado a la fase.
+     * 
+     * @return el vehículo asignado.
      */
     public Vehiculo getVehiculo() {
         return this.vehiculo;
     }
+
     /**
-     * Inserta un vehículo en la fase que llama al método
-     * @param vehiculo 
+     * Valida si la matrícula del vehículo ya está en una fase.
+     * 
+     * @param matricula la matrícula a validar.
+     * @return true si la matrícula es válida.
      */
-    public void setVehiculo(Vehiculo vehiculo) {
+    public boolean matriculaValida(String matricula) {
+        if(this.vehiculo == null)return true;
+        return !this.vehiculo.getMatricula().equalsIgnoreCase(matricula);
+    }
+    
+    /**
+     * Asigna un vehículo a la fase.
+     * 
+     * @param vehiculo el vehículo a asignar.
+     */
+    public void setVehiculo(Vehiculo vehiculo){
         this.vehiculo = vehiculo;
+    }
+    
+    /**
+     * Valida si la posición dada está dentro del rango permitido.
+     * 
+     * @param posicion la posición a validar.
+     * @return la posición válida.
+     */
+    public int validarPosicion(int posicion){
+        while(!LIMITE_POSICION.inclou(posicion)){
+            teclado.out("Introduce una posición correcta: ");
+            posicion = teclado.inInt();
+        }
+        return posicion;
     }
 }
